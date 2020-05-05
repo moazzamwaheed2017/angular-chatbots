@@ -1,0 +1,50 @@
+
+  <div class="col-md-12">
+    <div>     
+      <section class="content-header">
+        <h1>
+          Let's Chat
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-tasks"></i> Support</a></li>
+          <li><a href="#">Chat</a></li>
+          <li class="active">Bot</li>
+        </ol>
+      </section>     
+      <section class="content">
+        <div id="content">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="">                
+                <div class="box-body">
+                  <div class="chatform">
+                    <div class="chatlist" #chatlist>
+                      <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let msg of messages">
+                          <img [src]="msg.avatar" class="avatar">
+                          <div class="message">
+                            {{msg.content}}
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <form (onsubmit)="sendMessage()" class="chatcontrol">
+                      <div class="chatform">
+                        <table class="table">
+                          <tr>
+                            <td><input type="text" class="form-control chatinput" placeholder="Enter your Message" name="content" aria-label="Enter your Message" aria-describedby="Enter your Message" [(ngModel)]="message.content" /></td>
+                            <td><button class="btn btn-primary" (click)="sendMessage()" type="submit">Send</button></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
